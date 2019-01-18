@@ -18,7 +18,7 @@
 
 I'm a soon-to-be-graduating senior at Stevens Institute of Technology, studying Computer Science. Strong passion for ed-tech, so this is where I'll be documenting the effort I'm making towards pursuing that passion. Feel free to reach out to me via [[mailto:ksaleem@stevens.edu][email]].
 
-You can find my resume [[./static/resume.pdf][here]].
+You can find my resume [[./static/resume.html][here]].
 
 
 * Posts

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>resume</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  /*
+   * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+   *
+   * CSS for making a resume with pandoc. Inspired by moderncv.
+   *
+   * This CSS document is delivered to you under the CC BY-SA 3.0 License.
+   * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+   */
+  
+  /* Whole document */
+  body {
+      font-family: "Times New Romain", Times, Times New Roman, serif;
+      max-width: 850px;
+      margin: auto;
+      background: #FFFFFF;
+      padding: 10px 10px 10px 10px;
+  }
+  
+  /* Title of the resume */
+  h1 {
+      font-size: 50px;
+      color: #000;
+      text-align:center;
+      margin-bottom:15px;
+  }
+  
+  /* Titles of categories */
+  h2 {
+      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+      color: #B24c59;
+  }
+  /* There is a bar just before each category */
+  h2:before {
+      content: "";
+      display: inline-block;
+      margin-right:4%;
+      width: 20%;
+      height: 5px;
+      padding-bottom: 3px;
+      /* This is called "rulecolor" in the ConTeXt stylesheet. */
+      background-color: #D3D3D3;
+  }
+  
+  /* Definitions */
+  dt {
+      text-align: right;
+      float: left;
+      clear: left;
+      width: 20%;
+      font-style: italic;
+      /*font-weight: bold;*/
+  }
+  dd {
+      margin-left: 24%;
+  }
+  p {
+      margin-top:0;
+      margin-bottom:7px;
+  }
+  
+  /* Blockquotes */
+  blockquote {
+      text-align: center
+  }
+  
+  /* Links */
+  a {
+      text-decoration: none;
+      color: #B24c59;
+  }
+  
+  /* Horizontal separators */
+  hr {
+      color: #A6A6A6;
+  }
+  
+  ul {
+      margin-left: -10px;
+  }
+  
+  table {
+      width: 100%;
+  }
+  </style>
+</head>
+<body>
+<h1 id="khayyam-saleem">Khayyam Saleem</h1>
+<h2 id="education">Education</h2>
+<dl>
+<dt>Aug 2015 - Present</dt>
+<dd><p><strong>B.S. Computer Science</strong> Stevens Institute of Technology, <em>Hoboken, NJ 07095</em></p>
+<p>Honors: Dean’s List, Presidential Scholarship<br/> Minors: Mathematics, Literature<br/> President of Upsilon Pi Epsilon [Computer Science Honor Society]<br/> GPA: 3.877<br/> Expected Graduation: May 2019</p>
+</dd>
+</dl>
+<h2 id="experience">Experience</h2>
+<dl>
+<dt>Jun 2018 - Present</dt>
+<dd><p><strong>Software Engineer Intern</strong>, J.P. Morgan &amp; Chase, <em>Jersey City, NJ</em></p>
+<ul>
+<li>Built SRE maturity assessment portal for SRE team as full-stack application [Flask, SQLAlchemy, React]</li>
+<li>Deployed RESTful API to perform a health check on JMS messaging provider for Global Technology Infrastructure team [Java, JMS, Spring Boot, Maven]</li>
+</ul>
+</dd>
+<dt>Dec 2018 - Present</dt>
+<dd><p><strong>Curriculum Experience Associate</strong>, Codecademy, <em>Manhattan, NY</em></p>
+<ul>
+<li>Audit curriculum content across all courses</li>
+<li>Fix bugs in content, including tests for learner code and assisting in pedagogy</li>
+</ul>
+</dd>
+<dt>May 2017 - Aug 2017</dt>
+<dd><p><strong>Research Assistant</strong>, New Mexico State University, <em>Las Cruces, NM</em></p>
+<ul>
+<li>NSF REU site</li>
+<li>Deep Learning for Control Chart Pattern Recognition</li>
+<li>Presented findings at AAAS 2018 ERN Conference for STEM</li>
+</ul>
+</dd>
+<dt>Aug 2016 - Dec 2018</dt>
+<dd><p><strong>Codecademy Pro Advisor</strong>, Codecademy, <em>Manhattan, NY</em></p>
+<ul>
+<li>Moderate learner communities for “Intensive” courses for data science and data visualization</li>
+<li>Perform QA on upcoming content and new courses</li>
+</ul>
+</dd>
+<dt>Aug 2016 - Present</dt>
+<dd><p><strong>Teaching Assistant</strong>, Stevens Institute of Technology, <em>Hoboken, NJ</em>.</p>
+<ul>
+<li>CS115 – Intro to CS, conducted weekly lab, wrote grading scripts for homework [Python]</li>
+<li>CS284 – Data Structures, taught weekly recitation, design and test homework [Java]</li>
+<li>CS496 – Programming Languages, ported all course content from Racket to OCaml</li>
+<li>CS511 – Concurrent Programming, ported course content from Erlang to Elixir</li>
+</ul>
+</dd>
+</dl>
+<h2 id="projects">Projects</h2>
+<dl>
+<dt><a href="https://devblog.lifeskillssoftware.tech/" target="_blank">Life Skills Software</a></dt>
+<dd><p>A platform for special-needs classrooms, gamifying the assessment and development of skills</p>
+<ul>
+<li>Communicated with potential clients about their needs for the platform</li>
+<li>Built REST API [node, express, MongoDB]</li>
+<li>Created microservice architecture deployed on a single VPS [Traefik]</li>
+<li>Developed client applications with token-based authentication for students, teachers, parents, and admins [React]</li>
+<li>Created CI/CD pipeline for team of 3 to develop and deploy quickly [Jenkins, docker-compose, Github Webhooks]</li>
+<li>Scrum master for Agile team [Trello]</li>
+</ul>
+</dd>
+<dt><a href="https://github.com/khayyamsaleem/Client-Connect" target="_blank">Client Connect</a></dt>
+<dd><p>Application designed to help clients connect with freelancers based on location and skillset</p>
+<ul>
+<li>Built REST API [node, express, MongoDB]</li>
+<li>Created frontend application with token-based authentication for clients and freelancers [Next.js, React]</li>
+<li>Created uniform development environment that deployed all services locally [docker-compose]</li>
+<li>Implemented chat application with message caching [Socket.IO, redis]</li>
+</ul>
+</dd>
+<dt><a href="https://github.com/khayyamsaleem/gradual-typing" target="_blank">gradual-typing</a><br/><a href="https://github.com/khayyamsaleem/explicit-lang-type-inference-engine" target="_blank">type-inference</a></dt>
+<dd>Implementation of gradual typing in MIT-scheme<br/>Implementation of Hindley-Milner type inference engine in OCaml for Type Systems course
+</dd>
+</dl>
+<h2 id="skills">Skills</h2>
+<dl>
+<dt>Languages</dt>
+<dd>javascript, python, java, c, c++, sql, ocaml, erlang, racket, clojure, english, urdu, hindi
+</dd>
+<dt>Frameworks</dt>
+<dd>express, node, flask, LaTeX, pandas, matplotlib, sqlalchemy, docker, traefik, emacs, vim
+</dd>
+</dl>
+<hr />
+<blockquote>
+<p><a href="mailto:hello@khayyam.me" class="email">hello@khayyam.me</a> • <a href="https://github.com/khayyamsaleem" target="_blank">Github</a> • <a href="https://linkedin.com/in/khayyamsaleem" target="_blank">LinkedIn</a> • +1 (973) 941-7323<br />
+Hoboken, NJ 07095, USA</p>
+</blockquote>
+</body>
+</html>
