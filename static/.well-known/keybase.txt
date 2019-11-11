@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/khayyam
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://khayyam.me
+  * I am khayyam (https://keybase.io/khayyam) on keybase.
+  * I have a public key with fingerprint 6904 842E F791 2F16 8098  0C9D DC66 6D4B 592C 02F1
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e6fa0c8f0f8ab8cdbf8e2a3b0181fa594df4f7c2d5d693c7b4de5a48b63e131c0a",
+      "fingerprint": "6904842ef7912f1680980c9ddc666d4b592c02f1",
+      "host": "keybase.io",
+      "key_id": "dc666d4b592c02f1",
+      "kid": "0101e6fa0c8f0f8ab8cdbf8e2a3b0181fa594df4f7c2d5d693c7b4de5a48b63e131c0a",
+      "uid": "6ca5b9ea53f7a843ed6b5ac7d4423a19",
+      "username": "khayyam"
+    },
+    "service": {
+      "hostname": "khayyam.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1573496092,
+  "expire_in": 157680000,
+  "prev": "9b01e8827e66523e5e1f9c9964421211102522fe403794efeb68e2c22ea53148",
+  "seqno": 4,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMIhAnicrVJbSBVBGD6aXZSCynoIfJClC5Xazu7snp1DF0FQSiUIBQXlNDM7o5u6
+53jOqp1MUOxGRWmJmSQKXTBEFKKLYZJllByCiEqoUCgiI4uIIrLQZqUegh6bl+H/
+5vu/+b6ff2TJPE9CDGqesNMKs+NjosMtVZ7i0YtJtRIJmBHJVyuVsbmLlZss7PjL
+LFPySTKQAdM5lqnBZW5gYlCTcIMpWCUyMADHGoImh9xLFVMzdaRSL4Em0zA0iK4y
+oAIqYylF4pZdwkLBkGU7QlZHMjSgwrgXAYUD3ZCRIVNkmlTXdRMSDSlUFg+isTQQ
+djuEOYLDLM0KCEwU/jl7/+D/Z99Vc3I6xRpBDGsq92IDqszUiYap14RQUTFALjHM
+QjauYK7XUhyJ4AqpLkUSYLVFmTtXN8jfhDRRpEjBUMAJ0EC5wEsdJxj2uX1OJOgS
+axjx/5bwE8s2xRBFRzULha2ALfmAYFLHcjWB5lUh0mWkpEhsb9AKMb9lz8FiuOK4
+/7BqIYlEfmYYipfpuqaoTGOAI4qQLqIABQAgK5qicAZl1Ysg44zoYmxUUdz0ABqS
+G6rSDkg+KGziEiEZtkps7FSFmFR353ZRnCcmwbNgfqy7XJ6E+KV/Vm74xcLZgrT0
+rMXdy7JqLsd1Fo7lnApvvZG57+qV8czTNT29b+sfrq7lr/BER9/3PfV5Fc+mo/4l
+SZOe89qudRm7G84kPljBnclPvaoxukE+ur+4/drn2FvJRdH2E+Thm4Ldl6QDRSP5
+F2Yaj3Qe+1HXeGI5n8zR+7Z38KG22eotjzbfHS/Qiqdj+aaVZObL8Y1Pk426e+lt
+kcInoZdfO879bO0fSG1pzkzYOnhwCtwYHd9GH8/ml+8Y+NCBX0e7i0nUThycaimL
+f1d+uH94rG88Nb5rLbyeS553nsxrX/PtWX32zZxDTfKPk+978s42Zd4fyu1aBXc2
+LGod0iqbZunHqbGM9bm/AP3BRhE=
+=8dsD
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/khayyam
+
+==================================================================
