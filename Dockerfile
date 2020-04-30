@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-ENV HUGO_VERSION 0.52
+ENV HUGO_VERSION 0.69.0
 
 WORKDIR /tmp
 RUN apk add --no-cache --virtual .deps curl tar && \
