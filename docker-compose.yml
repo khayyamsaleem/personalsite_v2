@@ -14,4 +14,4 @@ services:
 networks:
   web:
     external:
-      name: reverse-proxy_webgateway
+      name: server_webgateway
