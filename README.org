@@ -1,5 +1,3 @@
 #+TITLE: personal site
 
-Implemented with <3 with org-mode and hugo, with help from ox-hugo
-
 available at https://khayyam.me

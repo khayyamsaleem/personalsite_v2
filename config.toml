@@ -1,51 +1,16 @@
-languageCode = "en-us"
 title = "Khayyam Saleem"
-BaseURL = "https://khayyam.me/"
-theme = "hyde-hyde"
-metadataformat = "yaml"
-subtitle = "ed tech, functional programming, devops"
 
-canonifyURLs = true
-uglyurls = false
-postNavigation=false
-enableEmoji = true
-summaryLength = 30
-pygmentsCodeFencesGuessSyntax = true
+[module]
+  [[module.imports]]
+    path = "github.com/spf13/hyde"
 
+[Menus]
+  main = [
+    { Name = "Github", URL = "https://github.com/khayyamsaleem" },
+    { Name = "LinkedIn", URL = "https://linkedin.com/in/khayyamsaleem" },
+    { Name = "Resume", URL = "https://khayyam.me/resume.pdf" }
+  ]
 
 [params]
-  author = "Khayyam Saleem"
-  name = "Khayyam Saleem"
-  locale = "en-US"
-  authorlinkedin = "https://www.linkedin/com/in/khayyamsaleem"
-  github_user = "khayyamsaleem"
-  github_repo = "personalsite_v2"
-  github_banner = false
-  themeColor = "theme-base-0d"
-  copyright = "Khayyam Saleem"
-  description = "ed tech, functional programming, devops"
-  sidebartitle = "Khayyam Saleem"
-  codeeditor_menu_mostrecentposts = false
-  sidebartagline = "ed tech, functional programming, devops"
-
-[params.social]
-  twitter = "khayyamsaleem"
-  github = "khayyamsaleem"
-  linkedin = "khayyamsaleem"
-  gravatar = "khayyam.saleem@gmail.com"
-
-[[menu.main]]
-  name = "Posts"
-  identifier = "posts"
-  url = "/posts/"
-
-
-[[menu.social]]
-  pre = "<i class ='fa fa-github'></i>"
-  url = "https://github.com/khayyamsaleem"
-  identifier = "github"
-
-[[menu.social]]
-  pre = "<i class = 'fa fa-linkedin'></i>"
-  url = "https://linkedin.com/in/khayyamsaleem"
-  identifier = "linkedin"
+  description = "ed-tech, functional programming, devops"
+  themeColor = "theme-base-0e"
