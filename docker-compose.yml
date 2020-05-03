@@ -2,7 +2,7 @@ version: '2'
 
 services:
   personalsite:
-    build: .
+    image: registry.gitlab.com/khayyamsaleem/personalsite_v2:latest
     networks:
       - web
     labels:

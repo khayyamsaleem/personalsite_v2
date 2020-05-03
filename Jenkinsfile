@@ -13,10 +13,16 @@ pipeline {
   stages {
     stage('Deploy'){
       agent any
+      environment {
+        GITLAB_REGISTRY_CREDS = credentials('gitlab-registry')
+      }
       steps {
         checkout scm
         script {
+          sh("docker login -u $GITLAB_REGISTRY_CREDS_USR -p $GITLAB_REGISTRY_CREDS_PSW registry.gitlab.com")
           if (BRANCH_NAME == "master") {
+            sh 'docker build . -t registry.gitlab.com/khayyamsaleem/personalsite_v2'
+            sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2'
             sh 'docker stop $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
             sh 'docker rm $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
             sh 'docker rmi $(docker images | grep personal | awk \'{ print $3 }\') || true'
