@@ -23,6 +23,8 @@ pipeline {
           if (BRANCH_NAME == "master") {
             sh 'docker build . -t registry.gitlab.com/khayyamsaleem/personalsite_v2'
             sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2'
+            sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build -f Dockerfile.arm --platform linux/arm/v7 -t registry.gitlab.com/khayyamsaleem/personalsite_v2:arm .'
+            sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2:arm'
             sh 'docker stop $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
             sh 'docker rm $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
             sh 'docker rmi $(docker images | grep personal | awk \'{ print $3 }\') || true'
