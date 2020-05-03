@@ -20,20 +20,26 @@ pipeline {
         checkout scm
         script {
           sh("docker login -u $GITLAB_REGISTRY_CREDS_USR -p $GITLAB_REGISTRY_CREDS_PSW registry.gitlab.com")
+          sh 'docker run --rm --privileged multiarch/qemu-user-static --reset -p yes'
           if (BRANCH_NAME == "master") {
-            sh 'docker run --rm --privileged multiarch/qemu-user-static --reset -p yes'
-            sh 'docker build . -t registry.gitlab.com/khayyamsaleem/personalsite_v2'
-            sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2'
-            sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx rm builder || true'
-            sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx create --name builder --driver docker-container --use'
-            sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx inspect --bootstrap'
-            sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build -f Dockerfile.arm --platform linux/arm/v7 -t registry.gitlab.com/khayyamsaleem/personalsite_v2:arm .'
-            sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2:arm'
-            sh 'docker stop $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
-            sh 'docker rm $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
-            sh 'docker rmi $(docker images | grep personal | awk \'{ print $3 }\') || true'
-            sh 'docker-compose up --build -d'
-            echo 'successfully deployed'
+            parallel(
+                "regular": {
+                    sh 'docker build . -t registry.gitlab.com/khayyamsaleem/personalsite_v2'
+                    sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2'
+                    sh 'docker stop $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
+                    sh 'docker rm $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
+                    sh 'docker rmi $(docker images | grep personal | awk \'{ print $3 }\') || true'
+                    sh 'docker-compose up --build -d'
+                    echo 'successfully deployed'
+                },
+                "arm": {
+                    sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx rm builder || true'
+                    sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx create --name builder --driver docker-container --use'
+                    sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx inspect --bootstrap'
+                    sh 'DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build . -f Dockerfile.arm --platform linux/arm/v7 -t registry.gitlab.com/khayyamsaleem/personalsite_v2:arm --load'
+                    sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2:arm'
+                }
+            )
           } else {
             echo 'Don\'t have a dev server yet, so just go ahead and push'
           }
