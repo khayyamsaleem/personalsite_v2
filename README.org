@@ -1,3 +1,0 @@
-#+TITLE: personal site
-
-available at https://khayyam.me
