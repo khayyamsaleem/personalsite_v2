@@ -42,7 +42,9 @@ Push New Image:
     - docker buildx build . -f Dockerfile.arm --platform linux/arm/v7 -t ${CI_REGISTRY}/khayyamsaleem/personalsite_v2:arm --push
 
 Refresh Deploy:
-  image: lachlanevenson/k8s-kubectl:latest
+  image:
+    name: lachlanevenson/k8s-kubectl:latest
+    entrypoint: ["/bin/sh", "-c"]
   stage: deploy
   only:
     - master
