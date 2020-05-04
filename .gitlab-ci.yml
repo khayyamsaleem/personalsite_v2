@@ -26,6 +26,9 @@ Push New Image:
   stage: push
   dependencies:
     - buildx
+  environment:
+    name: k3s
+    url: http://personal.k3s.khayyam.me
   only:
     - master
   before_script:
