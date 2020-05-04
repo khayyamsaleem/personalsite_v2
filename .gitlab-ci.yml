@@ -1,6 +1,7 @@
 stages:
   - buildx
   - push
+  - deploy
 
 buildx:
   image: docker:19.03-git
@@ -39,4 +40,12 @@ Push New Image:
   script:
     - docker buildx create --use --name builder
     - docker buildx build . -f Dockerfile.arm --platform linux/arm/v7 -t ${CI_REGISTRY}/khayyamsaleem/personalsite_v2:arm --push
-    - kubectl rollout restart deploy personal-site-deployment
+
+Refresh Deploy:
+  image: lachlanevenson/k8s-kubectl:latest
+  stage: deploy
+  only:
+    - master
+  script:
+    - kubectl version
+    - kubectl rollout restart deploy personal-site-deployment --namespace default
