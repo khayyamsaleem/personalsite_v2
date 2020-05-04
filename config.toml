@@ -9,7 +9,7 @@ baseURL = "https://khayyam.me/"
   main = [
     { Name = "Github", URL = "https://github.com/khayyamsaleem" },
     { Name = "LinkedIn", URL = "https://linkedin.com/in/khayyamsaleem" },
-    { Name = "Resume", URL = "https://khayyam.me/resume.pdf" }
+    { Name = "Resume", URL = "/resume.pdf" }
   ]
 
 [params]
