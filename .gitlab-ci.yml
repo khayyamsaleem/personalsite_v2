@@ -12,6 +12,9 @@ buildx:
     paths:
       - buildx
     expire_in: 1 hour
+  environment:
+    name: k3s
+    url: http://personal.k3s.khayyam.me
   services:
     - docker:19.03.5-dind
   script:
@@ -49,6 +52,9 @@ Refresh Deploy:
   stage: deploy
   only:
     - master
+  environment:
+    name: k3s
+    url: http://personal.k3s.khayyam.me
   before_script:
     - echo "${KUBECONFIG}" > ~/.kube/config
   script:
