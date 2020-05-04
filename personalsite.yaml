@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-site-deployment
+  namespace: default
+  labels:
+    app: personal-site
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: personal-site
+  template:
+    metadata:
+      labels:
+        app: personal-site
+    spec:
+      containers:
+      - name: personal-site
+        image: registry.gitlab.com/khayyamsaleem/personalsite_v2:arm
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 1313
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-site-svc
+  namespace: default
+spec:
+  selector:
+    app: personal-site
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 1313
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: personal-site-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/frontend-entry-points: http
+spec:
+  rules:
+  - host: personal.k3s.khayyam.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: personal-site-svc
+          servicePort: 80
