@@ -5,6 +5,8 @@ services:
     image: registry.gitlab.com/khayyamsaleem/personalsite_v2:latest
     networks:
       - web
+    ports:
+      - "1313:1313"
     labels:
       traefik.enable: "true"
       traefik.http.routers.personalsite.rule: "Host(`khayyam.me`)"
