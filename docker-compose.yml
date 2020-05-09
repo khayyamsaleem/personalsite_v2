@@ -9,7 +9,7 @@ services:
       traefik.enable: "true"
       traefik.http.routers.personalsite.rule: "Host(`khayyam.me`)"
       traefik.http.routers.personalsite.entrypoints: https
-      traefik.http.services.personalsite.loadbalancer.server.port: 1313
+      traefik.http.services.personalsite.loadbalancer.server.port: "1313"
       traefik.docker.network: "server_webgateway"
     restart: always
 
