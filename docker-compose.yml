@@ -3,6 +3,7 @@ version: '2'
 services:
   personalsite:
     image: registry.gitlab.com/khayyamsaleem/personalsite_v2:latest
+    container_name: personalsite
     networks:
       - web
       - logging
