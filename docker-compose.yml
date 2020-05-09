@@ -1,19 +1,31 @@
-version: '2'
+version: '3'
 
 services:
   personalsite:
     image: registry.gitlab.com/khayyamsaleem/personalsite_v2:latest
     networks:
       - web
+      - logging
     labels:
       traefik.enable: "true"
       traefik.http.routers.personalsite.rule: "Host(`khayyam.me`)"
       traefik.http.routers.personalsite.entrypoints: https
       traefik.http.services.personalsite.loadbalancer.server.port: "1313"
       traefik.docker.network: "server_webgateway"
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: localhost:24224
+        fluentd-async-connect: 'true'
+        fluentd-retry-wait: '1s'
+        fluentd-max-retries: '30'
+        tag: personalsite
     restart: always
 
 networks:
+  logging:
+    external:
+      name: logging_logging
   web:
     external:
       name: server_webgateway
