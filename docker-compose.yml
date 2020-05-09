@@ -6,9 +6,10 @@ services:
     networks:
       - web
     labels:
-      - "traefik.backend=personalsite"
-      - "traefik.frontend.rule=Host: khayyam.me, www.khayyam.me"
-      - "traefik.port=1313"
+      traefik.enable: "true"
+      traefik.http.routers.personalsite.rule: "Host(`khayyam.me`)"
+      traefik.http.routers.static.entrypoints: https
+      traefik.docker.network: "server_webgateway"
     restart: always
 
 networks:
