@@ -60,4 +60,4 @@ Refresh Deploy:
   script:
     - echo ${KUBECONFIG}
     - kubectl version --kubeconfig ${KUBECONFIG}
-    - kubectl rollout restart deploy personal-site-deployment --namespace default
+    - kubectl rollout restart deploy personal-site-deployment --namespace personalsite
