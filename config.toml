@@ -1,5 +1,5 @@
 title = "Khayyam Saleem"
-baseURL = "https://khayyam.me/"
+baseURL = khayyam.me
 
 [module]
   [[module.imports]]
