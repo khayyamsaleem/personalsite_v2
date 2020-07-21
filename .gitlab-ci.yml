@@ -42,6 +42,8 @@ Push New Image:
     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
   script:
     - docker buildx create --use --name builder
+    - sed '2 s/^.*$/baseURL: "personal.k3s.khayyam.me"/'
+    - cat config.toml
     - docker buildx build . -f Dockerfile.arm --platform linux/arm/v7 -t ${CI_REGISTRY}/khayyamsaleem/personalsite_v2:arm --push
 
 Refresh Deploy:
