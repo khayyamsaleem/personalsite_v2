@@ -15,7 +15,7 @@ WORKDIR /app
 ADD . /app
 
 ENV GO111MODULE=on
-RUN hugo --verbose
+RUN hugo --verbose --baseURL personal.k3s.khayyam.me
 
 FROM nginx:stable-alpine
 
