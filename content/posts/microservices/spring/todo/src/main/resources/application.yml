@@ -1,0 +1,17 @@
+todo:
+  default-todos:
+  - id: eec4266d-85d7-49e6-b45e-14e4227e8b5a
+    title: Learn Java
+    created-time: 1596595731075 
+  - id: 5986653c-2337-4ca6-b605-2348038bf94c
+    title: Learn Maven
+    created-time: 1596595746115
+  - id: 3e794407-5cb0-4555-bd27-1dcc32ab8158
+    title: Learn Spring Boot
+    created-time: 1596595746115
+  - id: 538d2a97-043a-4ac8-ac01-a0dc968360df
+    title: Learn Docker
+    created-time: 1596595746115
+  - id: 9e0732f3-fd79-4761-bb66-141aa399829a
+    title: Learn K8S
+    created-time: 1596595746115

@@ -1,0 +1,6 @@
+digraph G {
+    client -> gateway;
+    gateway -> m1 -> db1;
+    gateway -> m2 -> db2;
+    gateway -> m3 -> db3;
+}
