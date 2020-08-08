@@ -20,7 +20,7 @@ pipeline {
         checkout scm
         script {
           sh("docker login -u $GITLAB_REGISTRY_CREDS_USR -p $GITLAB_REGISTRY_CREDS_PSW registry.gitlab.com")
-          if (BRANCH_NAME == "master") {
+          if (BRANCH_NAME == "main") {
             sh 'docker build . -t registry.gitlab.com/khayyamsaleem/personalsite_v2'
             sh 'docker push registry.gitlab.com/khayyamsaleem/personalsite_v2'
             sh 'docker stop $(docker ps -a | grep personal | awk \'{ print $1 }\') || true'
@@ -38,7 +38,7 @@ pipeline {
   post {
     failure {
       script {
-        if (BRANCH_NAME == 'master'){
+        if (BRANCH_NAME == 'main'){
           echo 'no images currently built'
           sh 'docker-compose up --build -d'
           setBuildStatus("Build succeeded", "SUCCESS");
@@ -50,7 +50,7 @@ pipeline {
     }
     success {
       script {
-        if (BRANCH_NAME == 'master'){
+        if (BRANCH_NAME == 'main'){
           echo 'rebuilt image successfully'
           setBuildStatus("Build succeeded", "SUCCESS");
         } else {

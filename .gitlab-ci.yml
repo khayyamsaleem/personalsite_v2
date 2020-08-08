@@ -34,7 +34,7 @@ Push New Image:
     name: k3s
     url: http://personal.k3s.khayyam.me
   only:
-    - master
+    - main
   before_script:
     - mkdir -p ~/.docker/cli-plugins
     - mv buildx ~/.docker/cli-plugins/docker-buildx
@@ -50,7 +50,7 @@ Refresh Deploy:
     entrypoint: ["/bin/sh", "-c"]
   stage: deploy
   only:
-    - master
+    - main
   environment:
     name: k3s
     url: http://personal.k3s.khayyam.me
