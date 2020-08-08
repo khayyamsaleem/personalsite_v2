@@ -3,7 +3,7 @@ baseURL = "/"
 
 [module]
   [[module.imports]]
-    path = "github.com/colorchestra/smol"
+    path = "github.com/spf13/hyde"
 
 [Menus]
   main = [
