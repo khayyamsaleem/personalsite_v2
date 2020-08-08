@@ -16,7 +16,7 @@ Additionally, I am consistently changing my mind about what I want to specialize
 This site is built with Hugo, and delivered by the world's worst CI pattern. We'll describe that in a future post, but hopefully there will be an even future-er post that describes how I changed my CI pattern to not be as bad as this.
 
 # Theme?
-I did a bunch of stuff at [work](https://chase.com) to learn how to make a Hugo theme from scratch. That was last December, and Hugo has changed a lot since then. I'm learning all about Hugo Modules and Hugo Pipes and data-driven content and a bunch of other cool hugo features, so I'll [implement them](https://github.com/khayyamsaleem/ham-hugo) slowly and steadily along the way. ~Until I have some base stuff going on, I'll be leveraging the beautiful [Hyde theme](https://github.com/spf13/hyde)~. EDIT: facing some difficulty finding an appropriate theme for educational content. In the meantime, downscaling to a more minimal theme.
+I did a bunch of stuff at [work](https://chase.com) to learn how to make a Hugo theme from scratch. That was last December, and Hugo has changed a lot since then. I'm learning all about Hugo Modules and Hugo Pipes and data-driven content and a bunch of other cool hugo features, so I'll [implement them](https://github.com/khayyamsaleem/ham-hugo) slowly and steadily along the way. Until I have some base stuff going on, I'll be leveraging the beautiful [Hyde theme](https://github.com/spf13/hyde).
 
 # Are you going to stick with it this time?
 Only time can tell...
