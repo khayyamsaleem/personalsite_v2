@@ -1,9 +1,7 @@
 title = "Khayyam Saleem"
 baseURL = "/"
 
-[module]
-  [[module.imports]]
-    path = "github.com/spf13/hyde"
+theme = "github.com/spf13/hyde"
 
 [Menus]
   main = [
