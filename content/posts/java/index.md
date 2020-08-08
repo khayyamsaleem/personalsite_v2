@@ -1,7 +1,9 @@
 ---
 title: "Java and Microservices"
-date: 2020-08-06T10:27:36-04:00
-draft: true
+date: 2020-08-07T02:09:08-04:00
+draft: false
+tags:
+  - enterprise-microservices
 ---
 
 ## Java
@@ -16,6 +18,85 @@ One of the most central principles in Java programming is that **everything is a
 
 Objects will contain one or more **fields** that hold data. You can **construct** an **instance** of an object to **initialize** all of its fields. You can then invoke a **method** on an object to process some information using its fields and any **arguments** that were passed to the method.
 
+Here's a brief dissection of a simple Java class:
+
+```java
+package com.tasteofindia.sample.car;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.Slf4j;
+
+/**
+ * This is a simple class that represents a Car.
+ */
+@Getter // this is an "annotation," which can dynamically add functionality to your class at compile-time.
+@Setter
+@Slf4j // injects a "logging" client
+@ToString // injects an override of the toString method that gives a human-readable representation of our Car class and its fields
+public class Car {
+    private String model; //fields will have a "scope," "type," and "name."
+    private int year;
+    private int miles;
+
+    /**
+     * This is a constructor for the Car class.
+     * This constructor takes in arguments, and uses them to populate
+     * the fields in this class. You can see this constructor called in
+     * the main function below, when we create a "new" Car.
+     * 
+     * @param model the model of the car
+     * @param year the year in which the car was made
+     */
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+        // not every field has to be initialized with a constructor argument
+        this.miles = 0;
+    }
+
+    /**
+     * This is a method, that represents adding some miles to the cars
+     * odometer.
+     * 
+     * Methods typically consume some arguments, and use them to change 
+     * some state of the instance of your class.
+     */ 
+    public void drive(int miles) {
+        if (miles < 0) {
+            // throwing an exception ends the execution of your method. If
+            // it is not caught, it crashes your application with a
+            // message.
+            log.error("Passed in a negative number of miles: {}", miles);
+            throw new IllegalArgumentException("Must drive a positive number of miles");
+        }
+        // the setMiles and getMiles methods were automatically provided
+        // by the @Setter and @Getter annotations.
+        // lombok provides lots of useful annotations like this.
+        log.info("Driving {} miles", miles);
+        this.setMiles(this.getMiles() + miles);
+    }
+    
+    /**
+     * This is the main method. Typically, your application will have one
+     * "entrypoint" defined by this main function. This is the function 
+     * that runs when someone executes your compiled application with the
+     * java runtime environment (JRE).
+     * 
+     * @param args an array of command line arguments (if any) passed to
+            the program
+     */
+    public static void main(String[] args) {
+        Car volvo = new Car("volvo", 2020);
+        volvo.drive(20);
+        volvo.drive(10);
+        log.info("Car representation: {}", volvo);
+    }
+}
+```
+
+
+### Java Modules
 We can create a maintainable project structure by grouping all of our classes by either domain association or technical responsiblity. The classes are grouped into **packages**, which can optionally contain **subpackages**. When you have a lot of different Java applications, you will want to centralize them under your organization as a **group**. A **group** can contain multiple **artifacts** (one or more packages that are meant to be consumed as a single unit). An artifact can have multiple **versions**.
 
 Your Java modules can then be hosted on a centralized repository for download and consumption. One such public repository is [Maven central](https://mvnrepository.com). Large enterprises will typically host their own internal repositories. Each module can be uniquely defined by the combination of its group, artifact name, and version (**GAV**). For example, you can get the base spring boot web application dependencies with the GAV: `org.springframework.boot:sprint-boot-starter-web:2.3.2.RELEASE`.
