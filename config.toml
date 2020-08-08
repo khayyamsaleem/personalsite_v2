@@ -13,3 +13,5 @@ theme = "github.com/spf13/hyde"
 [params]
   description = "ed-tech, functional programming, devops"
   themeColor = "theme-base-0e"
+
+googleAnalytics = "UA-174955037-1"
