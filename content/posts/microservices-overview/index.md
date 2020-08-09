@@ -1,5 +1,5 @@
 ---
-title: Building enterprise microservices (series)
+title: "Microservices: Series overview"
 date: 2020-08-06T10:27:36.000-04:00
 tags:
 - enterprise-microservices
