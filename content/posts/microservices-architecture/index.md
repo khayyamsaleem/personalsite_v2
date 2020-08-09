@@ -1,5 +1,5 @@
 ---
-title: "Microservice Architectures"
+title: "Microservices: Architecture"
 date: 2020-08-07T02:09:08-04:00
 draft: false
 tags:
