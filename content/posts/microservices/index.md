@@ -5,6 +5,9 @@ tags:
 - enterprise-microservices
 
 ---
+
+{{< toc >}}
+
 ## Overview
 
 In July of last year, I joined a large firm as a software engineer. I was exposed to large-scale applications for the first time, and was able to shed my pre-existing biases against Java and Spring Boot as "old-school" or antiquated backend technologies.

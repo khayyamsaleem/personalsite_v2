@@ -6,6 +6,8 @@ tags:
   - enterprise-microservices
 ---
 
+{{< toc >}}
+
 ## Java
 ### Overview
 Java is a general-purpose programming language that is often used in large enterprises for creating APIs. This is likely because it has been around for a long time, and has been developed over many years to meet many business-critical requirements such as resilience, security, and performance.

@@ -6,7 +6,7 @@ tags:
   - enterprise-microservices
 ---
 
-![Architecture](./architecture.png)
+{{< toc >}}
 
 ## Terms
 ### Client
@@ -78,3 +78,20 @@ To achieve this, you will want to have "load-balancing" over your replication of
 
 ### Builders are owners
 Nobody knows the flow of the application better than the implementer. There should not be an "ops" team in charge of operating your application once it is built. You build it, you own it. There is nobody more qualified to debug and operate it than you.
+
+## Dissecting a microservice architecture
+
+![complex microservice architecture](./complex.png)
+
+### client
+This is an entity that makes requests to your platform.
+### gateway
+This is an entrypoint to the different APIs exposed by your microservice. A gateway can also be used for [service discovery](https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/). The purpose of a gateway is to handle tasks that must happen across all microservices, such as verifying authenticity of the request. It can serve as a load balancer as well.
+### microservices
+Each microservice in the blue box has a different "replication factor." This is exemplary of how microservices must be independently scalable. In this architecture, load balancing is done at the microservice layer, where each microservice is responsible for balancing load over its replicas. This is easier to do in a container-orchestrated cloud environment like kubernetes. In other environments, it's more likely to see the load balancing done at the gateway level. In this model, the gateway also has a service discovery engine so that it knows how many instances of each microservice are available.
+### external contact points
+Each microservice makes an independent connection to any external database instances or services it may require to get its business-function specific operations done.
+### service-to-service communication
+It is important to minimize service-to-service communication as much as possible, because in an ideal world, microservices are independent of one another. However, when service-to-service communication is required, there are multiple ways to go about it:
+- **direct connection**: In this model, services make HTTP connections directly to one another to send messages. One drawback of this model is that if one of the services is down, the request fails immediately, as REST requires a response to complete the request.
+- **message bus**: This model of service-to-service communication is more fault-tolerant, as it does not require a response from the service immediately. The most common model when using a message bus is a "publisher and subscriber" (pub-sub) pattern, where one service publishes a message to a "topic" on a message bus. Another service "subscribes" to that topic, and may publish another event to a different topic in response. This requires applications to be written differently; in a more "asynchronous" fashion. Common message bus implementations include Apache Kafka, RabbitMQ, Redis, and IBM MQ.

@@ -1,0 +1,45 @@
+digraph G {
+    compound=true;
+
+    newrank=true;
+    rankdir=TB;
+
+    client [shape=house];
+
+    gateway [shape=diamond];
+    e1 [shape=pentagon];
+    db1, db2, db3 [shape=cylinder];
+    {rank=same; e1; db1; db2; db3;}
+
+    subgraph clusterKafka {
+        kafka [width=4 shape=rect label="message bus"];
+    }
+
+    ACG[shape = doublecircle,label="",width=0, height=0];
+
+
+    subgraph cluster1 {
+        color=blue;
+        rank=same;
+        rankdir=LR;
+        ms1, ms2, ms3 [shape=record];
+        ms1[fillcolor="lightblue" label="{ms1 | {r1}}" style="rounded,filled"];
+        ms2[fillcolor="lightblue" label="{ms2 | {r1|r2|r3|r4}}" style="rounded,filled"];
+        ms3[fillcolor="lightblue" label="{ms3 | {r1|r2}}" style="rounded,filled"];
+        {rank=same; ms1; ms2; ms3;}
+    }
+
+    client -> gateway;
+    gateway -> ms2 [lhead=cluster1];
+
+    ms1 -> db1;
+    ms2 -> db2;
+    ms3 -> db3;
+
+    ms1 -> e1;
+    ms2 -> e1;
+
+    ms1, ms2, ms3 -> ACG [dir=back];
+    ACG -> kafka [lhead=clusterKafka];
+
+}
