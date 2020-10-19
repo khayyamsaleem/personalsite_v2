@@ -4,4 +4,4 @@
 
 [![DO Pipeline](https://build.khayyam.me/buildStatus/icon?job=personalsite_v2%2Fmain)](https://build.khayyam.me/job/personalsite_v2/job/main/) _the jenkins pipeline [deploying](https://khayyam.me) to docker running in digital ocean via docker-compose_
 
-available at https://khayyam.me
+available at https://khayyam.me.
